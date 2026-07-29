@@ -504,7 +504,11 @@ setEmailErr("");
                     </li>
                   ))}
                 </ul>
-                <a className="the-cta" href="#" onClick={(e) => e.preventDefault()}>
+                className="the-cta"
+                  href="https://engineears.com/lathaproducer"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Get your track evaluated
                 </a>
               </div>
