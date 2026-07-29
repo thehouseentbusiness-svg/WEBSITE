@@ -375,27 +375,31 @@ export default function MixComparator() {
       setEmailErr("Enter a real email — that's where the breakdown goes.");
       return;
     }
-    setEmailErr("");
+    
+  };
+setEmailErr("");
     setSaving(true);
     try {
-      const key = `leads:${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-      await window.storage.set(
-        key,
-        JSON.stringify({
-          email,
-          guessedKey: guess,
-          correct,
-          timestamp: new Date().toISOString(),
-        }),
-        true
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbwP5BDQuspkCTamr4mYBw5sclaClZgn01Xm4UMQKn0qZGztgtbh6Koloai5i0lvN7ix/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({
+            email,
+            guessedKey: guess,
+            correct,
+            timestamp: new Date().toISOString(),
+            source: "compare.thehouseentertainmentrecords.com",
+          }),
+        }
       );
     } catch (err) {
-      console.error("Storage error:", err);
+      console.error("Webhook error:", err);
     }
     setSaving(false);
     setUnlocked(true);
-  };
-
   const breakdown = [
     { tag: "LOW END", text: "The standard version has controlled, shaped low end — nothing fighting the kick and bass for space." },
     { tag: "GLUE", text: "Compression ties every hit together into one performance instead of separate loud/quiet moments." },
