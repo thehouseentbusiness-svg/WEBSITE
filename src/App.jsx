@@ -400,6 +400,8 @@ setEmailErr("");
     }
     setSaving(false);
     setUnlocked(true);
+  };
+
   const breakdown = [
     { tag: "LOW END", text: "The standard version has controlled, shaped low end — nothing fighting the kick and bass for space." },
     { tag: "GLUE", text: "Compression ties every hit together into one performance instead of separate loud/quiet moments." },
