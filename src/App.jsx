@@ -504,7 +504,8 @@ setEmailErr("");
                     </li>
                   ))}
                 </ul>
-                className="the-cta"
+                <a
+                  className="the-cta"
                   href="https://engineears.com/lathaproducer"
                   target="_blank"
                   rel="noopener noreferrer"
