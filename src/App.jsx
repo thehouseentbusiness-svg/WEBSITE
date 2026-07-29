@@ -376,7 +376,7 @@ export default function MixComparator() {
       return;
     }
     
-  };
+  
 setEmailErr("");
     setSaving(true);
     try {
